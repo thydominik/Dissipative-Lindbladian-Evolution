@@ -1,11 +1,11 @@
 function State = NQubitStateInit(NoQ, DensityInput, InitType, info)
     %INITNQUBIT: initialize an empty N qubit state as a structure
-    % ---------------------------------------------------------------------
+    % INPUTS---------------------------------------------------------------
     % NoQ - [int] Number of Qubits
     % DensityInput - [array // mtx; double] Density mtx or Density vector as a state descrioption
     % InitType - [char] {'m', 'M'} or {'v', 'V'} determines if its a Vector or mtx input
     % info - [char, array] allows to store additional info on the resulting Quantum state
-    % ---------------------------------------------------------------------
+    % INPUTS---------------------------------------------------------------
 
     % This will be the output structure
     State = struct();
