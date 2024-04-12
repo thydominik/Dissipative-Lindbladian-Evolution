@@ -13,7 +13,7 @@ if NoQ == 1 && ActingOn == 1
     alphasq = m0 * QSystem.DensityVector;
     betasq  = m1 * QSystem.DensityVector;
 elseif NoQ == 1 && ActingOn ~= 1
-    error('THere is no qubit to measure, check the target qubit number')
+    error('There is no qubit to measure, check the target qubit number!')
 elseif NoQ > 1 && ActingOn <= NoQ && ActingOn > 0
     if ActingOn == 1
         M0 = kron(m0, id);

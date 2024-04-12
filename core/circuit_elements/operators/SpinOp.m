@@ -14,7 +14,7 @@ function [S] = SpinOp(handle)
     elseif handle == 5 || handle == 'm'
         S = [0 0; 0 1];
     else
-        warning('Input not appropriate, try {(1,2,3) or {x,y,z}}')
+        warning('Input not appropriate, try {(1, 2, 3, 4, 5) or {x, y, z, p, m}}')
     end
 end
 

@@ -1,6 +1,10 @@
 function [Gate] = DissipativeQuantumGate_Init(GateInput, param1)
-    %DISSIPATIVEQUANTUMGATE_INIT Summary of this function goes here
-    %   Detailed explanation goes here
+    %DISSIPATIVEQUANTUMGATE_INIT 
+
+    % INPUT --------------------------------------------------
+    % GateInput - [string], Defines the dissipator
+    % INPUT --------------------------------------------------
+
     Gate = struct();
     Gate.Type = 'Dissipative Quantum Gate';
     if ischar(GateInput)
@@ -11,7 +15,7 @@ function [Gate] = DissipativeQuantumGate_Init(GateInput, param1)
             Gate.QubitNum   = 1;                        % The number of Qubit affected by this gate
             HamiltonianGate = kron(GateMtx, eye(2)) - kron(eye(2), GateMtx');   % Gate construction
             Gate.Duration   = pi/2;
-            % The Name 'HamiltonianGate' comes from the act that the
+            % The Name 'HamiltonianGate' comes from the fact that the
             % action of sigma_x is handled like a time evolution.
             % Gate.Duration will handle the proper timing of the gate
             % in order to form a full sigma_x gate.
@@ -74,7 +78,7 @@ function [Gate] = DissipativeQuantumGate_Init(GateInput, param1)
             Gate.Duration   = 0.5 * pi;
         end
     
-        if strcmp(GateInput, 'CNot') || strcmp(GateInput, 'Cnot')
+        if strcmp(GateInput, 'CNot') || strcmp(GateInput, 'Cnot') || strcmp(GateInput, 'CNOT')
             GateMtx         = sparse(  [1 0 0 0; ...
                 0 1 0 0; ...
                 0 0 0 1; ...
@@ -85,7 +89,7 @@ function [Gate] = DissipativeQuantumGate_Init(GateInput, param1)
             HamiltonianGate = BasisTransform(kron(GateMtx, eye(4)) - kron(eye(4), GateMtx.'), 'o', 2);
             Gate.Duration   = pi/2;
         end
-        if strcmp(GateInput, 'CRot') || strcmp(GateInput, 'Crot')
+        if strcmp(GateInput, 'CRot') || strcmp(GateInput, 'Crot') || strcmp(GateInput, 'CROT')
             GateMtx         = sparse([1 0 0 0; 0 1 0 0; 0 0 1 0; 0 0 0 exp(2*pi*1i*(2^(-param1)))]);
             Gate.Info       = 'Controlled Rotation w/ parameter';
             Gate.Unitarity  = 1;
