@@ -37,6 +37,7 @@ elseif strcmp(typeOfObject, 'v') || strcmp(typeOfObject, 'V') || strcmp(typeOfOb
     obj(NewBase) = obj(OriginalBase);
 
 end
+
 TrObj = obj;
 
 end
