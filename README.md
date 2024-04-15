@@ -1,3 +1,12 @@
 # Dissipative-Lindbladian-Evolution
 
-2024.02.27. - Repo init; Generic code collection; Work plan
+\section{Introduction}
+
+\section{Circuit elements}
+    \subsection{Quantum gates}
+    \subsection{measurement}
+    \subsection{Dissipators}
+    
+\section{Quantum states}
+
+\section{Time evolution}
