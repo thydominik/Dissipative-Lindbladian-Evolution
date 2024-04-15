@@ -1,5 +1,6 @@
 function State = NQubitStateInit(NoQ, DensityInput, InitType, info)
     %INITNQUBIT: initialize an empty N qubit state as a structure
+
     % INPUTS---------------------------------------------------------------
     % NoQ - [int] Number of Qubits
     % DensityInput - [array // mtx; double] Density mtx or Density vector as a state descrioption
@@ -74,8 +75,6 @@ function State = NQubitStateInit(NoQ, DensityInput, InitType, info)
 %         DensityInput = Real_temp + (Imag_temp * 1i);
         State.DensityVector     = DensityInput;
     end
-
-    
 end
 
 
