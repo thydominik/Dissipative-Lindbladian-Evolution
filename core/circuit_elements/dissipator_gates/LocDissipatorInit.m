@@ -15,7 +15,7 @@ if Row ~= Col
     error('Not square matrix')
 end
 
-if mod(N, 2) ~= 0
+if mod(Row, 2) ~= 0
     error('Wrong Dissipator Input');
 end
 
