@@ -1,17 +1,13 @@
 function [SystemDissipator] = DissipatorGateInit(DissipatorArray, RatesArray, NumberOfQubits, Duration)
-% DISSIPATORGATEINIT - 
+% DISSIPATORGATEINIT - Creates a dissipator gate with preset duration, qubitnumber and dissipation
+% rates.
 
 % INPUT --------------------------------------------------
-
+% DissipatorArray - [], 
+% RatesArray - [], 
+% NumberOfQubits - [], 
+% Duration - [], 
 % INPUT --------------------------------------------------
-
-% No Hamiltonian now
-%     arguments
-%         DissipatorArray
-%         RatesArray {MustBeNonZeroLength, mustBeNumeric, mustBeReal}
-%         NumberOfQubits
-%         Duration {mustBeNonzero}
-%     end
 
 if NumberOfQubits ~= length(RatesArray)
     warning('temporary warning message: qubit number and dissipator number is different, no probs tho')
