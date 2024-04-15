@@ -5,9 +5,6 @@ function [RhoSys, RhoVec] = DensityMtxPureInit(PsiMtx)
 
 Size = size(PsiMtx);
 
-%Here we could check a lot of things: example
-    % -is the individual wavefuntion normalised?
-    % -is PsiMtx in a good format?
 if Size(1) ~= 2
     warning('Psi Matrix: wrong format')
 end
@@ -23,6 +20,6 @@ for NoQ = 2:NumberOfQubits
     RhoSys      = kron(RhoSys, Rho_temp);
 end
 
-RhoVec = dm2dv(RhoSys);
+RhoVec = dm2dv(RhoSys);     % This is the Liouvillian space equivalent of the same state. Second output.
 end
 
