@@ -1,5 +1,5 @@
 function [Pauli_mtx] = Pauli(handle)
-    %PAULI This function creates the appropriate Pauli matrix from the command
+    % PAULI This function creates the appropriate Pauli matrix from the command
     % Pauli(handle); The 'handle' can be 1, 2, 3 or x, y, z
     
     if  handle == 1 || handle == 'x' || handle == 'X'
