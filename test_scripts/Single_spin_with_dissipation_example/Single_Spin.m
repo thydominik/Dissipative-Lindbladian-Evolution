@@ -91,8 +91,8 @@ Fidelity_Diss_Perf = Fidelity(QuantumSystem, Perfect_QuantumSystem);
 
 %% 7.2: Changing the rates:
 
-Gamma = linspace(0, 1, 100);
-for gammaIndex = 1:100
+Gamma = linspace(0, 1, 50);
+for gammaIndex = 1:50
 QuantumSystem = QStateActGate(Hadamard, Starting_QuantumSystem, 1, 1);
 QuantumSystem = QStateActDissipator(QuantumSystem, Pauli_Z_Diss, Gamma(gammaIndex), 1, 1);
 QuantumSystem = QStateActGate(X, QuantumSystem, 1, 1);
@@ -119,6 +119,8 @@ hold off
 saveas(gcf, "Fidelity_1_qubit.png")
 save("Fidelity_data", "Fidelity_Diss_Perf")
 
+% -------------------------------------------
+
 figure(2)
 clf(figure(2))
 hold on
@@ -129,16 +131,14 @@ plotBlochVec(dv2dm(Starting_QuantumSystem.DensityVector), 'r')
 hold off
 
 saveas(gcf, "Bloch_sphere_1_qubit.png")
-%%
+
+% -------------------------------------------
+
 figure(3)
 clf(figure(3))
 hold on
 Tomography_Map(QuantumSystem, 10^-14)
-colorbar
+title("Tomography map")
 hold off
 
-
-
-
-
-
+saveas(gcf, "Tomography_map_1_qubit.png")

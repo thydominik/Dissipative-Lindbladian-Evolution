@@ -23,29 +23,18 @@ function [Plot] = Tomography_Map(Quantum_System, Min_Val)
     Color_Data_size = size(bar_graph(1).CData);
     z_color         = repelem(Phase, 6, 4);
     z_color         = mat2cell(z_color, Color_Data_size(1), ones(1, size(Real_Part, 2)) * Color_Data_size(2));
-
-    set(bar_graph, {'CData'}, z_color.')
+    set(bar_graph,{'CData'},z_color.')
     
     % axis ticks
-    NoQ         = Quantum_System.NumberOfQubits;
-    Tick_set    = 1:(2^(NoQ));
-    Label_set   = cell(1, 2^NoQ);
-
+    NoQ = Quantum_System.NumberOfQubits;
+    Tick_set = 1:(2^(NoQ));
+    Label_set = cell(1, 2^NoQ);
     for Basis_ind = 1:2^NoQ
-        Label_temp              = ['|' dec2bin(Tick_set(Basis_ind) - 1, NoQ) '>'];
-        Label_set(Basis_ind)    = {Label_temp};
+        Label_temp = ['|' dec2bin(Tick_set(Basis_ind)-1, NoQ) '>'];
+        Label_set(Basis_ind) = {Label_temp};
     end
-
     xticks(Tick_set)
     xticklabels(Label_set)
     yticks(Tick_set)
     yticklabels(Label_set)
-    
-    view([30 60])
-    %xlabel("States")
-    %ylabel("States")
-    zlabel("Real Part", 'FontSize', 16)
-
-    cb = colorbar(); 
-    ylabel(cb,'Phase','FontSize',16,'Rotation',270)
 end
