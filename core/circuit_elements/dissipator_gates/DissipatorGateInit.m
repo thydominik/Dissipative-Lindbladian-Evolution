@@ -2,11 +2,14 @@ function [SystemDissipator] = DissipatorGateInit(DissipatorArray, RatesArray, Nu
 % DISSIPATORGATEINIT - Creates a dissipator gate with preset duration, qubitnumber and dissipation
 % rates.
 
+% Note: Good if we have a omplicated idssipator structure and the rates are not changing througout
+% the run.
+
 % INPUT --------------------------------------------------
-% DissipatorArray - [], 
-% RatesArray - [], 
-% NumberOfQubits - [], 
-% Duration - [], 
+% DissipatorArray - [array, dissipators], contains all the dissipators that we want to use on the system. 
+% RatesArray - [array, double], the rates for the individual dissipato gates
+% NumberOfQubits - [integer], number of qubits in the system 
+% Duration - [double], what is the duration of a given gate 
 % INPUT --------------------------------------------------
 
 if NumberOfQubits ~= length(RatesArray)
@@ -23,24 +26,23 @@ for i = 1:length(DissipatorArray)
     ActOnQubit      = Operator_temp.ActingOnQubit;
     Operator_temp   = Operator_temp.Operator(RatesArray(i));
 
-    F           = kron(kron(speye(2^((ActOnQubit-1))), Operator_temp), speye(2^((NumberOfQubits-ActOnQubit))));
+    F           = kron(kron(speye(2^((ActOnQubit - 1))), Operator_temp), speye(2^((NumberOfQubits - ActOnQubit))));
     FctF        = F' * F;
     AntiComm    = kron(FctF, speye(2^NumberOfQubits)) + kron(speye(2^NumberOfQubits), FctF);
     FF          = kron(F, conj(F));
     Lindbladian = Lindbladian + 1i * 0.5 * (2 * FF - AntiComm);
 end
 
-for i = 1 : 2^(2*NumberOfQubits)
+for i = 1 : 2^(2 * NumberOfQubits)
     num = i - 1;
-    binary = flip(de2bi(num, 2*NumberOfQubits));
-    binary(1, 1:(2*NumberOfQubits)) = binary(1, [1:2:(2*NumberOfQubits) 2:2:(2*NumberOfQubits)]);
+    binary = flip(de2bi(num, 2 * NumberOfQubits));
+    binary(1, 1:(2*NumberOfQubits)) = binary(1, [1:2:(2 * NumberOfQubits) 2:2:(2 * NumberOfQubits)]);
     ind(i) = bi2de(flip(binary)) + 1;
 end
 
 OriginalIndex = 1:2^(2*NumberOfQubits);
 Lindbladian(:, OriginalIndex) = Lindbladian(:, ind);
 Lindbladian(OriginalIndex, :) = Lindbladian(ind, :);
-
 
 SystemDissipator.Operator = Lindbladian;
 SystemDissipator.Duration = Duration;
