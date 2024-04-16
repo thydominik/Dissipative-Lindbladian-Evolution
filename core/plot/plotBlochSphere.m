@@ -1,14 +1,27 @@
-function plotBlochSphere(NoP, angle1, angle2)
+function plotBlochSphere(NumberOfPoints, angle1, angle2)
 %PLOTBLOCHSPHERE: Plotting a sphere which happens to be the Bloch sphere
-if angle1 == 'sv' %as in standard view
+
+if exist('angle1', 'var')
+    if  angle1 == 'sv' %as in standard view
+        angle1 = 60;
+    else
+        angle1 = angle1;
+    end
+else
     angle1 = 60;
 end
 
-if angle2 == 'sv'
+if exist('angle2', 'var')
+    if angle2 == 'sv'
+        angle2 = 15;
+    else
+        angle2 = angle2;
+    end
+else
     angle2 = 15;
 end
 
-[x, y, z] = sphere(NoP);
+[x, y, z] = sphere(NumberOfPoints);
 Sphere = surf(x, y, z);
 axis equal
 shading interp
