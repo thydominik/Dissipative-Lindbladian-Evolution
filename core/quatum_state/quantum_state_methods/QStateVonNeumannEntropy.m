@@ -12,6 +12,7 @@ function [S] = QStateVonNeumannEntropy(QSystem)
             S = S + Lambda(i) * log(1/Lambda(i));
         end
     end
-    QSystem.Entropy = real(S);
+    S = abs(real(S));
+    QSystem.Entropy = S;
 end
 
