@@ -37,7 +37,7 @@ Two-qubit gates:
 
 Additionally if the _gate input_ is not a string, but a matrix (the Hilbert space operator), the user can define their own gate. It is important to give the Hilbert space operator and not the Liouvillian space operator, because there is a specific basis choice in the code.
 
-The function will give back a _quantum gate_ object that stores all the necessary information about that gate. The action of that gate is handled elsewhere (see: [quantum_state](https://github.com/thydominik/Dissipative-Lindbladian-Evolution/main/README.md#quantum_state))
+The function will give back a _quantum gate_ object that stores all the necessary information about that gate. The action of that gate is handled elsewhere (see: [quantum_state](https://github.com/thydominik/Dissipative-Lindbladian-Evolution/blob/main/README.md#quantum_state))
 This object then can be sued to act on the quantum system separately. Another way of state evolution is to define a gate that acts on all qubits at the same time. This gate structre can be initialized with the second _QGateSystemInit.m_ function, although it is not recommended. This takes us to the _Operators_.
 
 ### Operators
