@@ -1,5 +1,6 @@
 function plotBlochVec(DensityMatrix, color)
-%PLOTBLOCHVEC: Plot the bloch vector only
+%PLOTBLOCHVEC: Plot the bloch vector only with optional coloring
+
 BlochVector = dm2bv(DensityMatrix);
 
 if exist('color', 'var')
