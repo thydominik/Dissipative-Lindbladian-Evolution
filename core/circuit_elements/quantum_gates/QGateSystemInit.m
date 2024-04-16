@@ -4,6 +4,7 @@ function [SystemGate] = QGateSystemInit(GateArray, GateOrder)
 %wide gate that acts on the whole system state.
 
 % NOTE: Not recommended to use. Slow.
+
 % INPUT ----------------------------------------------
 % GateArray - [array; struct()] Contains all the gates that are used
 % GateOrder - [array; int] Contains the order of the gates
