@@ -40,6 +40,5 @@ text(0, 0, -1.1, '$\left| 1 \right>$', 'Interpreter', 'latex', ...
     'FontSize', 20, 'HorizontalAlignment', 'Center')
 view([angle1 angle2])
 
-
 end
 
