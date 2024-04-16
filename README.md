@@ -1,12 +1,12 @@
 # Dissipative-Lindbladian-Evolution
 
-\section{Introduction}
+## Introduction
 
-\section{Circuit elements}
-    \subsection{Quantum gates}
-    \subsection{measurement}
-    \subsection{Dissipators}
+## Circuit elements
+### Quantum gates
+### Measurement
+### Dissipators
     
-\section{Quantum states}
+## Quantum states
 
-\section{Time evolution}
+## Time evolution
