@@ -41,8 +41,6 @@ The function will give back a _quantum gate_ object that stores all the necessar
 This object then can be sued to act on the quantum system separately. Another way of state evolution is to define a gate that acts on all qubits at the same time. This gate structre can be initialized with the second _QGateSystemInit.m_ function, although it is not recommended. This takes us to the _Operators_.
 
 ### Operators
-
-
 ```
 OneQubitOp.m
 OpPrep.m
@@ -50,6 +48,14 @@ Pauli.m
 SpinOp.m
 CliffordGates.m
 ```
+_OneQubitOp.m_ and _OpPrep.m_- takes a gate input that acts on one specific cubit then gives back the N qubit operator that acts on the whole system.
+
+_Pauli.m_ - as the name suggests, gives a Pauli operatorback. Possible to call it with numbers (1, 2, 3) or strings (capital or not) ('x', 'y', 'z')
+
+_SpinOp.m_ - Similarly to _Pauli.m_ this function gives back a spin operator.
+
+_CliffordGates.m_ - A function that generates all 1 and 2-qubit Clifford gates in Hilbert space. For running efficiency these are not made a _quantum gate_ by default.
+
 ### Measurement
 
 ### Dissipator gates
