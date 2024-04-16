@@ -1,8 +1,13 @@
-function plotBlochVec(rho)
+function plotBlochVec(DensityMatrix, color)
 %PLOTBLOCHVEC: Plot the bloch vector only
-BV = dm2bv(rho);
+BlochVector = dm2bv(DensityMatrix);
 
-someBV = line([ 0 BV(1)], [0 BV(2)], [0 BV(3)], ...
+if exist('color', 'var')
+    someBV = line([ 0 BlochVector(1)], [0 BlochVector(2)], [0 BlochVector(3)], 'color', color, ...
     'LineWidth', 2, 'Marker', 'o');
+else
+    someBV = line([ 0 BlochVector(1)], [0 BlochVector(2)], [0 BlochVector(3)], ...
+    'LineWidth', 2, 'Marker', 'o');
+end
 end
 
