@@ -12,7 +12,8 @@ if QSystemA.NumberOfQubits == QSystemB.NumberOfQubits
     DensityMatrix_A = dv2dm(QSystemA.DensityVector);
     DensityMatrix_B = dv2dm(QSystemB.DensityVector);
 
-    F = abs((trace(DensityMatrix_A * DensityMatrix_B)));
+    %F = abs(trace(DensityMatrix_A * DensityMatrix_B));     % for pure states.
+    F = abs(trace(sqrtm(DensityMatrix_A * DensityMatrix_B))^2);
 else
     warning('System size mismatch; Fidelity is 0')
     F = 0;
