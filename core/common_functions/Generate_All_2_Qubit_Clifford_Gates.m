@@ -2,14 +2,18 @@ function [Clifford_Gates_2_Qubits, Clifford_Lables] = Generate_All_2_Qubit_Cliff
 
 % Identity
 Id = [1 0; 0 1];
+
 % Pauli Gates
 PX = [0 1; 1 0];
 PY = [0 -1i; 1i 0];
 PZ = [1 0; 0 -1];
+
 % Hadamard
 H = 1/sqrt(2) * [1 1; 1 -1];
+
 % Phase gate
 S = [1 0; 0 1i];
+
 % Two site Clifford qubit gates (11520):
 Clifford_Gates_2_Site = {};
 
