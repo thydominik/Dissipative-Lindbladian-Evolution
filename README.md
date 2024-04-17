@@ -83,9 +83,11 @@ Fidelity.m
 Hard_Measurement_1_qubit.m
 ```
 
-_Fidelity.m_ - 
+_Fidelity.m_ - Takes two *comparable* quantum system object, rearranges the density vectors into density matricies and calculates the fidelity between them as 
 
-_Hard_Measurment_1_qubit.m_ - 
+$F(A, B) = \text{trace}\left(\sqrt{A \cdot B} \right)^2$
+
+_Hard_Measurment_1_qubit.m_ - Takes a quantum system and performs a measurement on one qubit, then gives back the measured quantum state of N qubits.
 
 ### Dissipator gates
     
