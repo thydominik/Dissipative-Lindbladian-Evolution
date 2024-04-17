@@ -1,6 +1,7 @@
 function pathimport
-%PATHIMPORT This function includes all the necessary functions paths
-% This only includes the core folder and it's subfolders
+%PATHIMPORT This function includes all the necessary functions paths. This only includes the core folder and it's subfolders
+
+addpath("core\")
 
 % Adding crcuit elements to the path
 addpath("core\circuit_elements\dissipator_gates\")
