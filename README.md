@@ -7,11 +7,11 @@ This MATLAB package provides a robust implementation for exact time evolution us
 
 The main body of the code is located in the _core_ folder of the repository. In order to use the package call pathimport.m, which will add all relevant subfolders from the _core_ to the Matlab path.
 
-Please note that this code was made for research porpouses.
+Please note that this code was made for research purposes.
 ```
 pathimport
 ```
-After this the example folders contains 3 slightly different examples on using the code. These scripts contain a step-by-step solution to three slightly different problems. 
+After this the example folder contains 3 slightly different examples on using the code. These scripts contain a step-by-step solution to three slightly different problems. 
 
 ## Circuit elements
 This subfolder contains the main building blocks for a quantum circuit and measurements.
@@ -111,7 +111,7 @@ NQubitStateInit.m
 initialize an N qubit state as a structure from the density input provided. This is the most important part of the code, every gate, dissipator, mesurement acts on this object.
 
 ### quantum_state_methods
-This folder contains the main methods that can be applied to the quantum system. The example files demonstraits how these work in detail.
+This folder contains the main methods that can be applied to the quantum system. The example files demonstrait how these work in detail.
 ```
 QStateActDissipator.m
 QStateActGate.m
@@ -134,7 +134,7 @@ _LidnbladEvol.m_ - Creates the operator that when exponentialized gives the time
 _dmUnitaryEvol.m_ - Gets a density matrix (rho) and an arbitrary operator in Hilbert space and evolve the density matrix.
 
 ## Plot
-This folder contains very simple plotting functions that help visualize 1-qubit states on the bloch sphere or show the tomograaphy map of a general quantum state. The examples provided contain sample figures of these
+This folder contains very simple plotting functions that help visualize 1-qubit states on the bloch sphere or show the tomograaphy map of a general quantum state. The examples provided contain sample figures of these.
 
 ## References:
 [1] Breuer, Heinz-Peter; Petruccione, F. (2002). The Theory of Open Quantum Systems. Oxford University Press. ISBN 978-0-1985-2063-4.
