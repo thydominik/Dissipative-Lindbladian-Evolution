@@ -90,20 +90,51 @@ $F(A, B) = \text{trace}\left(\sqrt{A \cdot B} \right)^2$
 _Hard_Measurment_1_qubit.m_ - Takes a quantum system and performs a measurement on one qubit, then gives back the measured quantum state of N qubits.
 
 ### Dissipator gates
-    
+There are three different possibilities of applying dissipation to the system. One is to apply "logical" errors to the system in the form of Pauli operators/gates. This does not require the use of the Lindbladian formalism. The second way is to define dissipators/jump operators, rates and the time interval that these acting on the system. The third way is to incorporate the dissipation effect into the Hamiltonian. Considering the regular (faultless) quantum gate as a Hamiltonian, which act simultaniously with the dissipators. The action of the gate fixes the time interval of the operation while the rate of the dissipator remains a freely adjustable variable.
+```
+DissipativeQuantumGate_Init.m
+DissipatorGateInit.m
+LocDissipatorInit.m
+```
+_DissipativeQuantumGate_Init.m_ - Initializes a dissipative quantum gate with a possibility of a parameter. Dissipative gates have a time duration and all three pauli dissipators are put besides the quantum gate. The strength of such dissipations can be set with a function handle.
+
+_DissipatorGateInit.m_ - Creates a dissipator gate with preset duration, qubitnumber and dissipation rates.
+
+_LocDissipatorInit.m_ - Creates a local dissipator for N qubits. This N is defined by the size of the DissipatorIntup input.
+
 ## quantum_state
-asdasdasdasf df
-### quantum_state_common_functions
-### quantum_state_methods
+This folder contains the tools for building up _quantum system_ objects, that contains all or just part of the qubits. 
 ### qubits
+```
+NQubitStateInit.m
+```
+initialize an N qubit state as a structure from the density input provided. This is the most important part of the code, every gate, dissipator, mesurement acts on this object.
+
+### quantum_state_methods
+This folder contains the main methods that can be applied to the quantum system. The example files demonstraits how these work in detail.
+```
+QStateActDissipator.m
+QStateActGate.m
+QStateCombine.m
+QStateGetNorm.m
+QStateGetStateVec.m
+StatePartialtrace.m
+QStateVonNeumannEntropy.m
+```
 
 ## time_evolution
+Time evolution folders contain two functions that evolves density matricies for comparison to the vectorized gate actions.
+```
+LidnbladEvol.m
+dmUnitaryEvol.m
+```
+
+_LidnbladEvol.m_ - Creates the operator that when exponentialized gives the time evolution operator.
+
+_dmUnitaryEvol.m_ - Gets a density matrix (rho) and an arbitrary operator in Hilbert space and evolve the density matrix.
 
 ## Plot
-
-## test-scripts
-
-## Mentions
+This folder contains very simple plotting functions that help visualize 1-qubit states on the bloch sphere or show the tomograaphy map of a general quantum state. The examples provided contain sample figures of these
 
 ## References:
 [1] Breuer, Heinz-Peter; Petruccione, F. (2002). The Theory of Open Quantum Systems. Oxford University Press. ISBN 978-0-1985-2063-4.
