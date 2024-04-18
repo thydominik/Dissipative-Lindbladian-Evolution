@@ -41,7 +41,7 @@ One-qubit gates:
 - $\sigma_x$ as 'x' or 'X'
 - $\sigma_y$ as 'y' or 'Y'
 - $\sigma_z$ as 'z' or 'Z'
-- Identity as 'e' or 1
+- Identity as 'e' or '1'
 - Hadamard as 'h' or 'H'
 - T gate as 't' or 'T'
 - sqrt(Z) or Phase gate or S as 's' or 'S'
