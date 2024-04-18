@@ -118,7 +118,7 @@ QStateActGate.m
 QStateCombine.m
 QStateGetNorm.m
 QStateGetStateVec.m
-StatePartialtrace.m
+QStatePartialTrace.m
 QStateVonNeumannEntropy.m
 ```
 
