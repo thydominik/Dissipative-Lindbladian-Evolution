@@ -30,7 +30,7 @@ if ischar(GateInput)
         Gate.Info     = 'Pauli Z gate';
         Gate.QubitNum = 1;
         LindbladGate  = kron(GateMtx, conj(GateMtx));
-    elseif strcmp(GateInput, '1') || strcmp(GateInput, 'e')
+    elseif strcmp(GateInput, '1') || strcmpi(GateInput, 'e')
 
         GateMtx       = sparse(eye(2, 2));
         Gate.Info     = 'Unit gate';
