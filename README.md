@@ -134,7 +134,7 @@ _LidnbladEvol.m_ - Creates the operator that when exponentialized gives the time
 _dmUnitaryEvol.m_ - Gets a density matrix (rho) and an arbitrary operator in Hilbert space and evolve the density matrix.
 
 ## Plot
-This folder contains very simple plotting functions that help visualize 1-qubit states on the bloch sphere or show the tomograaphy map of a general quantum state. The examples provided contain sample figures of these.
+This folder contains very simple plotting functions that help visualize 1-qubit states on the bloch sphere or show the tomography map of a general quantum state. The examples provided contain sample figures of these.
 
 ## References:
 [1] Breuer, Heinz-Peter; Petruccione, F. (2002). The Theory of Open Quantum Systems. Oxford University Press. ISBN 978-0-1985-2063-4.
