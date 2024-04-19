@@ -1,6 +1,7 @@
 function pathimport
 %PATHIMPORT This function includes all the necessary functions paths. This only includes the core folder and it's subfolders
 
+
 addpath("core\")
 
 % Adding crcuit elements to the path
@@ -37,6 +38,6 @@ disp("Core Quantum State functions were added.")
 addpath("core\time_evolution\")
 
 disp("Core Time evolution were added.")
-s
+
 end
 
