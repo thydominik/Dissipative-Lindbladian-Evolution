@@ -37,7 +37,6 @@ disp("Core Quantum State functions were added.")
 addpath("core\time_evolution\")
 
 disp("Core Time evolution were added.")
-
-clc
+s
 end
 
