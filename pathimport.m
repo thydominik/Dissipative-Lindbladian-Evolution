@@ -38,7 +38,6 @@ addpath("core\time_evolution\")
 
 disp("Core Time evolution were added.")
 
-pause(1.5)
 clc
 end
 
