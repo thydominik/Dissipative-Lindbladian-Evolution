@@ -103,9 +103,9 @@ if ischar(GateInput)
 end
 
 if Gate.QubitNum == 1
-    Dissipator_X    = @(g1) g1 * (kron(Pauli('x'), Pauli('x')') - eye(4));
+    Dissipator_X    = @(g1) g1 * (kron(Pauli('x'), Pauli('x').') - eye(4));
     Dissipator_Y    = @(g2) g2 * (kron(Pauli('y'), Pauli('y').') - eye(4));
-    Dissipator_Z    = @(g3) g3 * (kron(Pauli('z'), Pauli('z')') - eye(4));
+    Dissipator_Z    = @(g3) g3 * (kron(Pauli('z'), Pauli('z').') - eye(4));
 
     Dissipator_Full = @(g1, g2, g3) (Dissipator_X(g1) + Dissipator_Y(g2) + Dissipator_Z(g3));
 

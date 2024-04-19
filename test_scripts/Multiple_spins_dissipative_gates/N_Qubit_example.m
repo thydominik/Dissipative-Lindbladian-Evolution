@@ -75,7 +75,6 @@ for i = 2:NoQ
     QuantumSystem = QStateActGate(CN, QuantumSystem, [i (i - 1)], NoQ, cn_rates);
 end
 
-
 % calculate the evolution without the dissipation:
 Perfect_QuantumSystem = QStateActGate(H, Starting_QuantumSystem, 1, NoQ, [0 0 0]);
 for i = 2:NoQ
