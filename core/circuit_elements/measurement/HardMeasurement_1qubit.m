@@ -1,4 +1,4 @@
-function [OutQState, Measurement] = Hard_Measurement_1_qubit(QSystem, ActingOn)
+function [OutQState, Measurement] = HardMeasurement_1qubit(QSystem, ActingOn)
 
 % HARD_MEASUREMENT_1_QUBIT - This function will perform a measurement on a specific qubit, then
 % Taking a measurment on qubit 'ActingOn'

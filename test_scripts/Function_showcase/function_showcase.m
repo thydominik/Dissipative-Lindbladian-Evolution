@@ -28,7 +28,7 @@ QuantumSystem = Hard_Measurement_1_qubit(QuantumSystem, 2);
 QuantumSystem.DensityVector
 
 %% Now measure the first:
-QuantumSystem = Hard_Measurement_1_qubit(QuantumSystem, 1);
+QuantumSystem = HardMeasurement_1qubit(QuantumSystem, 1);
 dv2dm(QuantumSystem.DensityVector)
 
 %% Get the 2 qubit basis to understand the order of elements in the density matrix above:
