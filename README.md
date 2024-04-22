@@ -3,7 +3,11 @@
 A Matlab repository that contains the basic elements for exact Lindbladian time-evolution on qubits/two-level systems.
 
 ## Introduction
-This MATLAB package provides a robust implementation for exact time evolution using the Lindbladian formalism [1]. It offers a versatile toolset for simulating the dynamics of open quantum systems, accounting for both unitary evolution and dissipative processes. Dissipation can be implemented as discrete quantum gates, jump operators with arbitrary dissipation rates or as dissipative gates, where we treat the gate and jump operator as a Hamiltonian. 
+This MATLAB package provides a robust implementation for exact time evolution using the Lindbladian formalism [1].
+
+$\frac{d\rho}{dt} = -\frac{i}{\hbar}[H, \rho] + \sum_k \Gamma_k\left( L_k \rho L_k^\dagger - \frac{1}{2} \lbrace L_k^\dagger L_k, \rho\rbrace \right)$
+
+It offers a versatile toolset for simulating the dynamics of open quantum systems, accounting for both unitary evolution and dissipative processes. Dissipation can be implemented as discrete quantum gates, jump operators with arbitrary dissipation rates or as dissipative gates, where we treat the gate and jump operator as a Hamiltonian. 
 
 The main body of the code is located in the _core_ folder of the repository. In order to use the package call pathimport.m, which will add all relevant subfolders from the _core_ to the Matlab path.
 
@@ -41,7 +45,7 @@ One-qubit gates:
 - $\sigma_x$ as 'x' or 'X'
 - $\sigma_y$ as 'y' or 'Y'
 - $\sigma_z$ as 'z' or 'Z'
-- Identity as 'e' or '1'
+- Identity as 'e', 'E' or '1'
 - Hadamard as 'h' or 'H'
 - T gate as 't' or 'T'
 - sqrt(Z) or Phase gate or S as 's' or 'S'
@@ -56,7 +60,7 @@ Two-qubit gates:
 Additionally if the _gate input_ is not a string, but a matrix (the Hilbert space operator), the user can define their own gate. It is important to give the Hilbert space operator and not the Liouvillian space operator, because there is a specific basis choice in the code.
 
 The function will give back a _quantum gate_ object that stores all the necessary information about that gate. The action of that gate is handled elsewhere (see: [quantum_state](https://github.com/thydominik/Dissipative-Lindbladian-Evolution/blob/main/README.md#quantum_state))
-This object then can be sued to act on the quantum system separately. Another way of state evolution is to define a gate that acts on all qubits at the same time. This gate structure can be initialized with the second function QGateSystemInit.m, although it is not recommended. This takes us to the _Operators_.
+This object then can be used to act on the quantum system separately. Another way of state evolution is to define a gate that acts on all qubits at the same time. This gate structure can be initialized with the second function QGateSystemInit.m, although it is not recommended due to inefficiant memory usage (constrcuting the system wide N-qubit gates are constly). This takes us to the _Operators_.
 
 ### Operators
 ```
