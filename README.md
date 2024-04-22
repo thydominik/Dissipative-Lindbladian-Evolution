@@ -104,7 +104,7 @@ _DissipativeQuantumGate_Init.m_ - Initializes a dissipative quantum gate with a 
 
 _DissipatorGateInit.m_ - Creates a dissipator gate with preset duration, qubitnumber and dissipation rates.
 
-_LocDissipatorInit.m_ - Creates a local dissipator for N qubits. This N is defined by the size of the DissipatorIntup input.
+_LocDissipatorInit.m_ - Creates a local dissipator for N qubits. This N is defined by the size of the DissipatorIntup input. For example defining to define a Pauli X dissipation we can write: _Pauli_X_Diss = LocDissipatorInit(Pauli('X'));_ This will create a position and Gamma independent $\sigma_x$ dissipator. With _QStateActDissipator.m_ one can specify the time interval, dissipation rates and acting position of this operator.
 
 ## quantum_state
 This folder contains the tools for building up _quantum system_ objects, that contains all or just part of the qubits. 
