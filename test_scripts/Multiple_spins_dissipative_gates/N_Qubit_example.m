@@ -2,8 +2,8 @@ clc
 clear all
 
 %% Goal:
-% Define a randomly initialized N qubit system. Define dissipative gates that prepares the GHZ state if the qubit are prepared correctly and do the time evolution
-% on them.
+% Define a randomly initialized N qubit system. Define dissipative gates that prepares the GHZ state
+% if the qubit are prepared correctly and do the time evolution on them.
 
 %% Calculation steps--same as for 1 qubit--------
 % 1. General parameters and switches
@@ -15,7 +15,7 @@ clear all
 % 7. Results, Plots, saving
 % Calculation steps-----------------------------
 
-%% 1: this is a 1 qubit/spin example under dissipaiton of variable rates:
+%% 1: this is a 1 qubit/spin example under dissipation of variable rates:
 
 Switch_Figure = 1; % 1 - show and save figures; 0 - no figures, no saves
 Switch_Random = 1; % 1 - random initial state; 0 - user defined initial state
@@ -43,8 +43,8 @@ end
 for qubitIndex = 1:NoQ
     QubitSystems(qubitIndex) = NQubitStateInit(1, ket2dm(Qubits(qubitIndex, :)), 'm');
 end
-
-%Then combining them into a 7 qubit system. Note that one can initialize the 7 qubit system from the
+% After creating the 5 independent 1-qubit quantum systems we would like to combine them into a
+% 5-qubit system. Note that one can initialize the 5 qubit system from the
 %start, with carefully ordering the basis states!
 
 QuantumSystem = QubitSystems(1);
@@ -56,9 +56,9 @@ Starting_QuantumSystem = QuantumSystem;     % saving the initial starting quatum
 %% 4: Define the dissipative gates used:
 
 %The sigma_x,y,z dissipation gamma rates for the hadamard gate
-H_rates = 0.1 * [0.1 0.1 0.1];
+H_rates = 0.01 * [1 1 1];
 % same thing for the cnot, but in this case there are 6 different Pauli operators {x1, x2, y1, y2, ...}:
-cn_rates = 0.1 * [0.2 0.2 0.2 0.2 0.2 0.2];
+cn_rates = 0.02 * [1 1 1 1 1 1];
 
 %Dissipative quantum gates:
 H   = DissipativeQuantumGate_Init('h');

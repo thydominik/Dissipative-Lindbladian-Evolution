@@ -15,7 +15,7 @@ if strcmp(typeOfObject, 'O') || strcmp(typeOfObject, 'operator') || strcmp(typeO
         BaseTmp(1:2:end)    = Base(1:end/2);
         BaseTmp(2:2:end)    = Base((end/2) + 1 : end);
         %NewBase(i + 1)      = bi2de(flip(BaseTmp)) + 1;
-        NewBase(i + 1)      = bit2int(flip(BaseTmp), length(BaseTmp)) + 1;
+        NewBase(i + 1)      = bit2int(flip(BaseTmp).', length(BaseTmp)) + 1;
     end
 
     Dict(:, 1) = OriginalBase;
@@ -34,7 +34,7 @@ elseif strcmp(typeOfObject, 'v') || strcmp(typeOfObject, 'V') || strcmp(typeOfOb
         BaseTmp(1:2:end)    = Base(1:end/2);
         BaseTmp(2:2:end)    = Base((end/2) + 1 : end);
         %NewBase(i + 1)      = bi2de(flip(BaseTmp)) + 1;
-        NewBase(i + 1)      = bit2int(flip(BaseTmp), length(BaseTmp)) + 1;
+        NewBase(i + 1)      = bit2int(flip(BaseTmp).', length(BaseTmp)) + 1;
     end
 
     Dict(:, 1)          = OriginalBase;
