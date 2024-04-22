@@ -112,7 +112,13 @@ This folder contains the tools for building up _quantum system_ objects, that co
 ```
 NQubitStateInit.m
 ```
-initialize an N qubit state as a structure from the density input provided. This is the most important part of the code, every gate, dissipator, mesurement acts on this object.
+initialize an N qubit state as a structure from the density input provided. This is the most important part of the code, every gate, dissipator, mesurement acts on this object. The function can be used to initialize any N-qubit pure state
+
+Example 1 - 1 qubit initiliazation in the state $\ket{\Psi}_1 = 1/\sqrt(2) \ket0 + 1/\sqrt(2) \ket1$:
+_NQubitStateInit(1, ket2dm($\ket\Psi$), 'm')_
+
+Example 2 - 2 qubit initialization in the state $\ket{\Psi}_2 = \alpha \ket{00} + \beta \ket{01} + \gamma \ket{10} + \delta \ket{11}$:
+_NQubitStateInit(2, ket2dm($\ket\Psi_2$), 'm')_
 
 ### quantum_state_methods
 This folder contains the main methods that can be applied to the quantum system. The example files demonstrait how these work in detail.
