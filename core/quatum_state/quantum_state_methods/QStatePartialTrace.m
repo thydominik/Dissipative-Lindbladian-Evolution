@@ -31,7 +31,8 @@ if System_size == 1     % Only 1 qubit will remain after the partial trace:
             for m = 0:(2^(NoQ - 1) - 1)
                 % Create an 'NoQ-1' long bit string, with value 'm', then
                 % flip the bits order.
-                index_temp = flip(de2bi(m, NoQ - 1));
+                %index_temp = flip(de2bi(m, NoQ - 1));
+                index_temp = flip(int2bit(m, NoQ - 1));
 
                 % we get previously something like 001, for the partial
                 % trace we need the 'diagonals' of the system (that we
@@ -46,7 +47,8 @@ if System_size == 1     % Only 1 qubit will remain after the partial trace:
                 alpha      = [alphaLeft alphaRight];
 
                 %Binary goes from 0 but matlab indexes from 1 hence the +1
-                alphaIdx = bi2de(flip(alpha)) + 1;
+                %alphaIdx = bi2de(flip(alpha)) + 1;
+                alphaIdx = bit2int(flip(alpha)) + 1;
 
                 % Sum up for all combinations of 'index_temp'
                 DensityVectorTemp(2 * (i - 1) + j) = DensityVectorTemp(2 * (i - 1) + j) + State.DensityVector(alphaIdx);
@@ -102,6 +104,7 @@ else
     SubSystem_Trace = QStateGetNorm(TracedSystem);
 end
 end
+
 function a = Updateb(a)
 [ind] = find(a == 1, 1, 'last');
 if mod(ind, 4) == 0

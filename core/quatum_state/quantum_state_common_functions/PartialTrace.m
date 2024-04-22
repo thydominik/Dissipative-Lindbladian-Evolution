@@ -27,12 +27,14 @@ for i = 1:2
         index(NoQ + q)  = j - 1;
 
         for m = 0:(2^(NoQ - 1) - 1)
-            index_temp = flip(de2bi(m, NoQ - 1));
+            %index_temp = flip(de2bi(m, NoQ - 1));
+            index_temp = flip(int2bit(m, NoQ - 1));
 
             alphaBiL = [index_temp(1:q - 1) (i - 1) index_temp(q:end)];
             alphaBiR = [index_temp(1:q - 1) (j - 1) index_temp(q:end)];
 
-            alpha = bi2de(flip([alphaBiL alphaBiR])) + 1;
+            %alpha = bi2de(flip([alphaBiL alphaBiR])) + 1;
+            alpha = bit2int(flip([alphaBiL alphaBiR])) + 1;
 
             rho_Q(2 * (i - 1) + j) = rho_Q(2 * (i - 1) + j) + RhoV(alpha);
         end

@@ -2,7 +2,7 @@ function [SystemDissipator] = DissipatorGateInit(DissipatorArray, RatesArray, Nu
 % DISSIPATORGATEINIT - Creates a dissipator gate with preset duration, qubitnumber and dissipation
 % rates.
 
-% Note: Good if we have a omplicated idssipator structure and the rates are not changing througout
+% Note: Good if we have a complicated dissipator structure and the rates are not changing througout
 % the run.
 
 % INPUT --------------------------------------------------
@@ -34,10 +34,14 @@ for i = 1:length(DissipatorArray)
 end
 
 for i = 1 : 2^(2 * NumberOfQubits)
-    num = i - 1;
-    binary = flip(de2bi(num, 2 * NumberOfQubits));
-    binary(1, 1:(2*NumberOfQubits)) = binary(1, [1:2:(2 * NumberOfQubits) 2:2:(2 * NumberOfQubits)]);
-    ind(i) = bi2de(flip(binary)) + 1;
+    num     = i - 1;
+    %binary  = flip(de2bi(num, 2 * NumberOfQubits))
+    binary  = flip(int2bit(num, 2 * NumberOfQubits));
+
+    binary(1, 1:(2 * NumberOfQubits)) = binary(1, [1:2:(2 * NumberOfQubits) 2:2:(2 * NumberOfQubits)]);
+
+    %ind(i) = bi2de(flip(binary)) + 1;
+    ind(i) = bit2int(flip(binary), length(binary)) + 1;
 end
 
 OriginalIndex = 1:2^(2*NumberOfQubits);
