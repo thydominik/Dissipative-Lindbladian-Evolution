@@ -75,7 +75,7 @@ _OneQubitOp.m_ and _OpPrep.m_- takes a gate input that acts on one specific cubi
 
 _Pauli.m_ - as the name suggests, gives a Pauli operatorback. Possible to call it with numbers (1, 2, 3) or strings (capital or not) ('x', 'y', 'z')
 
-_SpinOp.m_ - Similarly to _Pauli.m_, this function gives back a spin operator.
+_SpinOp.m_ - Similarly to _Pauli.m_, this function gives back a spin operator. These are $S_i = \frac{\hbar}{2}\sigma_i$ and $S_+ = S_x + iS_y$, $S_- = S_x - iS_y$. This code is restricted to 2-level system, thus these spin operators can be used only for Spin-1/2 system.
 
 _CliffordGates.m_ - A function that generates all 1 and 2-qubit Clifford gates in Hilbert space. For running efficiency these are not made a _quantum gate_ by default.
 
@@ -84,7 +84,7 @@ _RandomUnitary.m_ - Gives back an N by N unitary matrix. Note that there is no r
 ### Measurement
 ```
 Fidelity.m
-Hard_Measurement_1_qubit.m
+HardMeasurement_1qubit.m
 ```
 
 _Fidelity.m_ - Takes two *comparable* quantum system object, rearranges the density vectors into density matricies and calculates the fidelity between them as 
