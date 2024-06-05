@@ -44,11 +44,11 @@ if System_size == 1     % Only 1 qubit will remain after the partial trace:
                 % qubit density vector
                 alphaLeft  = [index_temp(1:((Qubits - 1) * 2)) (i - 1) (j - 1)];
                 alphaRight = [index_temp((Qubits - 1) * 2 + 1 : end)];
-                alpha      = [alphaLeft alphaRight];
+                alpha      = [alphaLeft(:)' alphaRight(:)'];
 
                 %Binary goes from 0 but matlab indexes from 1 hence the +1
                 %alphaIdx = bi2de(flip(alpha)) + 1;
-                alphaIdx = bit2int(flip(alpha)) + 1;
+                alphaIdx = bit2int(flip(alpha)', length(alpha)) + 1;
 
                 % Sum up for all combinations of 'index_temp'
                 DensityVectorTemp(2 * (i - 1) + j) = DensityVectorTemp(2 * (i - 1) + j) + State.DensityVector(alphaIdx);
@@ -84,7 +84,7 @@ else
 
         for qubit_ind = 2:NoQ
             if any(Qubits == qubit_ind)
-                4 * (k - 1) + 1 : 4 * (k)
+                %4 * (k - 1) + 1 : 4 * (k)
                 T = kron(T, Indexing_operator(4 * (k - 1) + 1 : 4 * (k)));
                 k = k + 1;
             else
