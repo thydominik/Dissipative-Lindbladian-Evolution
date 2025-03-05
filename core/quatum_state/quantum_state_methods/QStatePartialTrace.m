@@ -59,7 +59,7 @@ if System_size == 1     % Only 1 qubit will remain after the partial trace:
 
     % Create the new state with the new traced out subsystem
     TracedSystem = NQubitStateInit(1, DensityVectorTemp.', 'v', ['Partial Traced the ' num2str(Qubits) 'th qubit from ' num2str(NoQ) ' qubit system']);
-    warning('QStatePartialTrace: Not apropriate messege by the QPartialTrace function when operatoring')
+    %warning('QStatePartialTrace: Not apropriate messege by the QPartialTrace function when operatoring')
     % and also give back the trace of said subsystem
     SubSystem_Trace = QStateGetNorm(TracedSystem);
 else
