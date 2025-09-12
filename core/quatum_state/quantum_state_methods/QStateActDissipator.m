@@ -29,7 +29,7 @@ else
     else
         ActingOn    = QSystem.NumberOfQubits - ActingOn + 1;
         
-        Dissipator  = expm(Interval * (kron(DissipatorGate.Operator(Rate), DissipatorGate.Operator(Rate).') - Rate*eye(4)));
+        Dissipator  = expm(Interval * (kron(DissipatorGate.Operator(Rate), DissipatorGate.Operator(Rate).') - Rate*eye(16)));
         %[NewDensityVector, Shape, S1, S2, t1, t2] = OLD_NTblockdot(reshape(QSystem.DensityVector, 4 * ones(1, QSystem.NumberOfQubits)), Dissipator, [ActingOn], [1], 4 * ones(1, QSystem.NumberOfQubits), size(Dissipator));
         [NewDensityVector, ~, ~, ~, ~, ~] = OLD_NTblockdot(reshape(QSystem.DensityVector, 4 * ones(1, QSystem.NumberOfQubits)), Dissipator, [ActingOn], [1], 4 * ones(1, QSystem.NumberOfQubits), size(Dissipator));
         
