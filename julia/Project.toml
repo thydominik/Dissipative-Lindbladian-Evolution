@@ -1,0 +1,4 @@
+name = "DissipativeLindbladian"
+authors = ["Dominik Szombathy <dominiks@domain.hu>"]
+version = "0.1.0"
+dependency = ["LinearAlgebra", "Test"]
